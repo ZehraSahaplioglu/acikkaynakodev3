@@ -6,7 +6,7 @@ app = Flask(__name__)
 api = Api(app)
 
 
-class Users(Resource):
+class Calendar(Resource):
     def get(self):
         data = pd.read_csv('users.csv')
         data = data.to_dict('records')
@@ -38,7 +38,7 @@ class Users(Resource):
         return {'message': 'Record deleted successfully.'}, 200
 
 
-class Cities(Resource):
+class Ay(Resource):
     def get(self):
         data = pd.read_csv('users.csv', usecols=[2])
         data = data.to_dict('records')
@@ -57,8 +57,9 @@ class Name(Resource):
 
 
 # Add URL endpoints
-api.add_resource(Users, '/users')
-
+api.add_resource(Calendar, '/calendar')
+api.add_resource(Ay, '/ay')
+api.add_resource(Name, '/<string:name>')
 
 if __name__ == '__main__':
     #     app.run(host="0.0.0.0", port=5000)
