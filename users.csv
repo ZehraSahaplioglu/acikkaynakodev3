@@ -1,5 +1,13 @@
 name,day,month
-Kıs,31,Ocak
+Kis,31,Ocak
+Kis,28,Subat
+Ilkbahar,31,Mart
 Ilkbahar,30,Nisan
+Ilkbahar,31,Mayis
 Yaz,30,Haziran
+Yaz,31,Temmuz
+Yaz,31,Agustos
+Sonbahar,30,Eylul
 Sonbahar,31,Ekim
+Sonbahar,30,Kasim
+Kis,31,Aralik
