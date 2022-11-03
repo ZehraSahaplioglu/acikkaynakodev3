@@ -5,7 +5,6 @@ import pandas as pd
 app = Flask(__name__)
 api = Api(app)
 
-
 class Calendar(Resource):
     def get(self):
         data = pd.read_csv('users.csv')
@@ -45,7 +44,6 @@ class Ay(Resource):
 
         return {'data': data}, 200
 
-
 class Name(Resource):
     def get(self, name):
         data = pd.read_csv('users.csv')
@@ -55,12 +53,9 @@ class Name(Resource):
                 return {'data': entry}, 200
         return {'message': 'No entry found with this name !'}, 404
 
-
-# Add URL endpoints
 api.add_resource(Calendar, '/calendar')
 api.add_resource(Ay, '/ay')
 api.add_resource(Name, '/<string:name>')
 
 if __name__ == '__main__':
-    #     app.run(host="0.0.0.0", port=5000)
     app.run("localhost", 8080)
